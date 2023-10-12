@@ -6,7 +6,19 @@ module.exports = {
         "./resources/**/*.vue",
     ],
     theme: {
-        extend: {},
+        extend: {
+            borderRadius: {
+                "20px": "20px",
+                'custom': '15px',
+            },
+            width: {
+                '45p':'45%',
+                '90': '95%',
+              },
+            height:{
+                '90': '95%',
+            }
+        },
     },
     plugins: [],
 };

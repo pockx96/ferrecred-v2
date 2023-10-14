@@ -5,9 +5,14 @@
         
         <div class="flex h-4/5 w-full  justify-between overflow-hidden">
 
-            @livewire('products-sales.search-box',['message' => session('message')])               
+            @if (session()->has('message') && !empty(session('message')))
+                @livewire('products-sales.search-box',['message' => session('message')])  
+            @endif
 
-            @include('sections.product-sale.info-sale')
+            <section class=" flex flex-col h-full w-full justify-around items-center ">
+                @include('sections.product-sale.info-sale')
+                @livewire('products-sales.table-sale')
+            </section>
 
             @include('sections.product-sale.side-bar')
         </div>

@@ -15,14 +15,16 @@ class SearchBox extends Component
 
     public function mount($message)
     {
-        $this->products = ProductCatalog::all();
-        $this->message = $message;
+        $this->updateMessage($message);
     }
 
-    public function updatedQuerySearch()
+    public function updateMessage($message)
     {
+        $this->message = $message;
         $this->products = ProductCatalog::where('description', 'LIKE', '%' . $this->message . '%')->get();
+        // dd($this->products);
     }
+
 
     public function productSelect($id)
     {

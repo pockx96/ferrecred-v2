@@ -11,32 +11,7 @@
 </head>
 
 <body>
-
-    <div class="flex w-full h-screen  bg-slate-300">
-        @livewire('app-navigation')
-        <section class="flex flex-col w-full items-center justify-between">
-            @include('sections.product-sale.header-sale')
-            <div class="flex h-4/5 w-full  justify-between">
-                <section class=" flex flex-col h-full w-full justify-around items-center ">
-                    <div class="flex w-full h-1/4 items-end justify-between px-8 py-6">
-                        <div class="flex w-1/2">
-                        </div>
-                        <x-customer-info></x-customer-info>
-                        <x-total-sale-box></x-total-sale-box>
-                    </div>
-                    @livewire('products-sales.table-sale')
-                </section>
-                @include('sections.product-sale.side-bar')
-
-            </div>
-
-            @livewire('products-sales.footer-sale')
-
-        </section>
-
-
-    </div>
-
+    @livewire('products-sales.products-sale-main')
     @livewireScripts
 </body>
 

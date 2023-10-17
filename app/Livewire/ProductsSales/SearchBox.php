@@ -11,24 +11,28 @@ class SearchBox extends Component
 {
 
     public $products = [];
-    public $message;
+    public $productRequest;
+    public $isVisible = false;
 
-    public function mount($message)
+    protected $listeners = ['productSearch'];
+
+    public function mount()
     {
-        $this->updateMessage($message);
+        $this->products = ProductCatalog::all();
     }
 
-    public function updateMessage($message)
+    public function productSearch($productRequest)
     {
-        $this->message = $message;
-        $this->products = ProductCatalog::where('description', 'LIKE', '%' . $this->message . '%')->get();
-        // dd($this->products);
+        $this->isVisible = ($productRequest != "") ? true : false;
+        $this->productRequest = $productRequest;
+        $this->products = ProductCatalog::where('description', 'LIKE', '%' . $productRequest . '%')->get();
     }
 
 
     public function productSelect($id)
     {
-        $this->dispatch('SelectProduct',$id);
+        $this->dispatch('SelectProduct', $id);
+        $this->isVisible = false;
     }
 
 

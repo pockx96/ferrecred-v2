@@ -7,12 +7,6 @@ use Livewire\Component;
 class ProductsSaleMain extends Component
 {
 
-    protected $listeners = ['valueSearch'];
-
-    public function valueSearch($message)
-    {
-        session()->flash('message', $message);
-    }
 
     public function render()
     {

@@ -10,7 +10,7 @@ class SearchBar extends Component
 
     public function emitInput()
     {
-        $this->dispatch('valueSearch', $this->search);
+        $this->dispatch('productSearch', $this->search);
     }
     public function render()
     {

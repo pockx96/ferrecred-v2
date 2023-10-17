@@ -1,6 +1,6 @@
 <div>
     @if ($isVisible)
-    <div class="flex justify-center w-full h-1/3 absolute">
+    <div class="flex justify-center w-full h-1/3 absolute z-10">
         <div
             class="bg-slate-100 flex justify-start w-3/5 rounded-20px border border-gray-400 overflow-y-auto overflow-hidden">
             <ul class="w-full mt-4">

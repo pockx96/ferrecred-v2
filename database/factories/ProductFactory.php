@@ -18,6 +18,7 @@ class ProductFactory extends Factory
     {
         return [
             'sale'=>$this->faker->numberBetween($min = 1, $max = 100),
+            'code'=>$this->faker->numberBetween($min = 1, $max = 100),
             'quantity'=>$this->faker->numberBetween($min = 1, $max = 1000),
             'amount'=>$this->faker->randomDigit,
             'weight'=>$this->faker->randomFloat($nbMaxDecimals = 2, $min = 0, $max = 1)

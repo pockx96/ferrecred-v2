@@ -7,7 +7,7 @@
                 @forelse ($products as $product)
                 <li wire:click="productSelect({{$product->id}})"
                     class="flex w-full text-lg text-gray-800 cursor-pointer hover:bg-slate-200  py-2">
-                    @svg('zondicon-search','w-14 text-gray-500 px-4'){{ $product->description }}
+                    @svg('zondicon-search','w-14 text-gray-500 px-4'){{ $product->description}}
                 </li>
                 @empty
                 <li>Producto no encontrado , trata con otra descripción</li>

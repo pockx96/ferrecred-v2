@@ -26,7 +26,7 @@
                 @livewire('products-sales.table-sale')
             </div>
 
-            @include('sections.product-sale.side-bar')
+            @livewire('products-sales.sidebar')
         </section>
         @include('sections.product-sale.footer-sale')
     </section>

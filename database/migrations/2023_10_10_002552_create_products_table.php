@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('sale');
             $table->integer('quantity');
+            $table->integer('code');
             $table->decimal('amount');
             $table->decimal('weight');
             $table->timestamps();

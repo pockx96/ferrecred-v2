@@ -11,7 +11,6 @@ class SearchBox extends Component
 {
 
     public $products = [];
-    public $productRequest;
     public $isVisible = false;
 
     protected $listeners = ['productSearch'];
@@ -24,7 +23,6 @@ class SearchBox extends Component
     public function productSearch($productRequest)
     {
         $this->isVisible = ($productRequest != "") ? true : false;
-        $this->productRequest = $productRequest;
         $this->products = ProductCatalog::where('description', 'LIKE', '%' . $productRequest . '%')->get();
     }
 
@@ -32,6 +30,7 @@ class SearchBox extends Component
     public function productSelect($id)
     {
         $this->dispatch('SelectProduct', $id);
+        
         $this->isVisible = false;
     }
 

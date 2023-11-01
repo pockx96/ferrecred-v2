@@ -4,11 +4,13 @@ namespace App\Livewire\ProductsSales;
 
 use Livewire\Component;
 
+use function Laravel\Prompts\search;
+
 class SearchBar extends Component
 {
     public $search = '';
 
-    public function emitInput()
+    public function searchKeyUp()
     {
         $this->dispatch('productSearch', $this->search);
     }
